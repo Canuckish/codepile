@@ -28,10 +28,10 @@ def pullData(stock):
 		splitSource = sourceCode.split('\n')
 
 		for eachLine in splitSource:
-			splitLine = eachLine.split(',')
-			if len(splitLine)==6:
-				if splitLine[0] > lastUnix:
-					if 'values' not in eachLine:
+			if 'values' not in eachLine:
+				splitLine = eachLine.split(',')
+				if len(splitLine)==6:
+					if int(splitLine[0]) > int(lastUnix):
 						lineToWrite = eachLine+'\n'
 						saveFile.write(lineToWrite)
 
