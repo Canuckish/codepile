@@ -47,3 +47,4 @@ def pullData(stock):
 
 for eachStock in stocksToPull:
 	pullData(eachStock)
+ 
