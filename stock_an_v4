@@ -16,7 +16,7 @@ def pullData(stock):
 		try:
 			readExistingData = open(saveFileLine, 'r').read()
 			splitExisting = readExistingData.split('\n')
-			mostRecentLine = splitExistingp[-2]
+			mostRecentLine = splitExisting[-2]
 			lastUnix = mostRecentLine.split(',')[0]
 		except Exception,e:
 			print str(e)
