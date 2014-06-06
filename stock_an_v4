@@ -3,7 +3,7 @@ import time
 import datetime
 
 
-stocksToPull = 'AAPL','GOOG'#,'MSFT','CMG','AMZN','EBAY','TSLA' #future V should have list, dict passing
+stocksToPull = 'AAPL','GOOG',#'MSFT','CMG','AMZN','EBAY','TSLA' #future V should have list, dict passing
 
 def pullData(stock):
 	try:
@@ -40,11 +40,13 @@ def pullData(stock):
 		print 'Pulled', stock
 		print '...sleeping...'
 		print str(datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'))
-		time.sleep(1)
+		time.sleep(5)  #CHANGE THIS FOR BIG LISTS
 
 	except Exception, e:
 		print 'main loop', str(e)
 
-for eachStock in stocksToPull:
-	pullData(eachStock)
- 
+while True:
+	for eachStock in stocksToPull:
+		pullData(eachStock)
+	#time.sleep(18000) 5h delayed repeat, eg
+
